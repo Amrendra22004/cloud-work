@@ -4,13 +4,13 @@
 wget https://github.com/fatedier/frp/releases/download/v0.58.1/frp_0.58.1_linux_amd64.tar.gz
 
 ```
-![image](https://github.com/user-attachments/assets/b9ee0609-4b91-4f45-b4dc-004a7bcb0550)
+
+![Screenshot from 2025-04-30 20-07-44](https://github.com/user-attachments/assets/58b04d52-3c15-47c9-af81-4889286534e3)
 
 ### -> Extract the downloaded FRP archive:
 ```
 tar -xzf frp_0.58.1_linux_amd64.tar.gz
 ```
-![image](https://github.com/user-attachments/assets/b12ec3d5-e92d-4a29-b410-ef10c7f760d6)
 
  - move to local folder (both for clent and server)
 ```
@@ -31,6 +31,8 @@ token = your-secure-token
 ```
 - make sure to add token (eg: - amrendra etc)
 
+![image](https://github.com/user-attachments/assets/a709e91a-e30b-44e0-bcd1-3b80230c8872)
+
 ## Configure EC2 Security Group:
 Go to the AWS EC2 console, select your instance, and edit the Security Group.
 - Add inbound rules:
@@ -42,7 +44,8 @@ Save the rules.
 ```
 ./frps -c frps.ini
 ```
-![Screenshot from 2025-04-18 22-54-23](https://github.com/user-attachments/assets/490cdd4b-c795-400f-9b86-aa4763d86cd2)
+
+![Screenshot from 2025-04-30 20-14-19](https://github.com/user-attachments/assets/ba442e25-c649-4a50-8a71-baa4bebad262)
 
 
 # Clent side or localhost
@@ -64,19 +67,25 @@ local_port = 8080
 remote_port = 8081
 ```
 - make sure to add same token on server side and EC-2 public IPv4 don't just copy !!
+
+![Screenshot from 2025-04-30 20-20-28](https://github.com/user-attachments/assets/cacc1577-7d2e-47d8-89c5-7353edcf0878)
   
 ### Run a Local Service (Optional): If no service is running on 127.0.0.1:8080, start a test web server:
 ```
 python3 -m http.server 8080
 ```
+
+![Screenshot from 2025-04-30 20-21-56](https://github.com/user-attachments/assets/d6089fd3-4524-4f14-8b47-469c2275b2d8)
+
 - Run frpc: Start the frp client:
 ```
 ./frpc -c frpc.ini
 ```
-![Screenshot from 2025-04-18 22-31-35](https://github.com/user-attachments/assets/fd148958-f223-44fa-bb45-d1d8636583b6)
 
-- it will connect to server 
-![Screenshot from 2025-04-18 22-30-53](https://github.com/user-attachments/assets/678ec57a-7dac-4b42-8672-1a8d429c11ba)
+
+- it will connect to server
+
+![Screenshot from 2025-04-30 20-23-03](https://github.com/user-attachments/assets/3613333f-21d1-436f-9f81-2d1d7d6ca3c9)
 
 (if not, check inbound rules of ec-2 instance Security Group step from above)
 
@@ -87,10 +96,15 @@ python3 -m http.server 8080
      ```
 for example:-
 - ec-2 instence:
-![Screenshot from 2025-04-18 22-32-13](https://github.com/user-attachments/assets/4e34aa18-e058-4789-9ad6-22279d9ca924)
+
+![Screenshot from 2025-04-30 20-24-47](https://github.com/user-attachments/assets/dbd8f80a-ee0b-42ed-93d7-74a37d22a44b)
 
 - in browser
-![Screenshot from 2025-04-18 23-05-53](https://github.com/user-attachments/assets/c5ebe8e4-e6b6-45be-94cf-b7f74a1ea2ef)
+
+![Screenshot from 2025-04-30 20-24-07](https://github.com/user-attachments/assets/c799690f-3d0b-4be0-9516-c83120b290b0)
+
+![Screenshot from 2025-04-30 20-26-48](https://github.com/user-attachments/assets/0a6c94e8-0419-4573-a332-e311c5f1b227)
+
 
 
      
