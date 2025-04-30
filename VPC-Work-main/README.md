@@ -1,41 +1,43 @@
 # VPC-Work
 ## Here is the process of creating VPC in AWS with 2 public and private subnet
-![photo_6107379375801486380_x](https://github.com/user-attachments/assets/feeb8ef0-e750-4948-b039-0cb66e11321b)
 
 ### 1. Create a VPC
-![image](https://github.com/user-attachments/assets/f237fd4d-644d-4e30-94ff-e829be2556b7)
+![Screenshot from 2025-04-30 19-36-47](https://github.com/user-attachments/assets/115e9576-122e-49a7-8cdc-f5e8947d321a)
 
 
 ### 2. Add Subnets
-![image](https://github.com/user-attachments/assets/5846dae2-22a5-4456-be00-209e4321e6b1)
+![Screenshot from 2025-04-30 19-37-27](https://github.com/user-attachments/assets/d78dc90f-0e7c-47e8-ba55-dbcf371d9b36)
+![Screenshot from 2025-04-30 19-39-52](https://github.com/user-attachments/assets/d0440351-e675-4bfd-8f28-0ef435b025d7)
 
 
 ### 3. Create an Internet Gateway (IGW)
-![image](https://github.com/user-attachments/assets/8f050131-0a41-4e6b-82d3-36f5842596cd)
+![Screenshot from 2025-04-30 19-42-22](https://github.com/user-attachments/assets/5390b819-e438-4f2f-8911-fecbbc3c760e)
 
 
 ### 4. Set Up Route Tables
-![image](https://github.com/user-attachments/assets/5f517a59-edef-447a-ae04-4c6eaec806b3)
+![Screenshot from 2025-04-30 19-43-30](https://github.com/user-attachments/assets/f9cafdf4-d282-40c6-8f65-5c213bf51802)
 
 --> Attach Internet gateway to public subnet route table
-![image](https://github.com/user-attachments/assets/279b9245-6463-4964-8473-2239b34d19aa)
+![Screenshot from 2025-04-30 19-44-09](https://github.com/user-attachments/assets/b5b32c07-367f-47db-9f8a-f8598e1cd9e3)
+
 
 -> subnet associations
-
-![image](https://github.com/user-attachments/assets/99e4dc47-b39c-4a97-9432-23c5dfef7c4f)
+- add public subnet to public route table 
+![Screenshot from 2025-04-30 19-45-11](https://github.com/user-attachments/assets/7f536298-cdd0-498f-b3ca-0b51d53072e9)
 
 ### 5. Configure Security Groups
 
-![image](https://github.com/user-attachments/assets/d2500fe0-c8ab-44dc-8ab8-c80f2aa93b64)
+![Screenshot from 2025-04-30 19-48-52](https://github.com/user-attachments/assets/ef113374-32bc-4bd7-962d-0f979e633f59)
 
 ## over all resource map of VPC
-![image](https://github.com/user-attachments/assets/47a4ed2f-f5df-4186-8045-2daa1e714d3f)
+![Screenshot from 2025-04-30 19-49-46](https://github.com/user-attachments/assets/6fd04f40-a36e-420e-baf0-0f91c1f753db)
 
 ### launch an EC2 Instances in any subnet(public and private -subnet) of this VPC:-
-![image](https://github.com/user-attachments/assets/f60a5422-3595-4722-8430-c85474bcc2b9)
+![Screenshot from 2025-04-30 19-51-24](https://github.com/user-attachments/assets/0f57428e-3abd-4909-a1e4-87319172e527)
+-edit network setting
+![Screenshot from 2025-04-30 19-52-01](https://github.com/user-attachments/assets/e06dbde2-6251-4f44-bdfe-371dad22a8ec)
+![image](https://github.com/user-attachments/assets/cee7460d-a4f1-4a6f-95de-81d9398dda59)
 
-![image](https://github.com/user-attachments/assets/b1af9f61-0d51-422e-a061-98619832aa2b)
-![image](https://github.com/user-attachments/assets/34fb8f2b-222b-4910-a5b1-bc0598b4d2c7)
 ### ->Install Apache HTTP Server on EC2 Instances
 ```sh
 sudo apt update
@@ -47,14 +49,11 @@ sudo apt install apache2 -y
 sudo systemctl start apache2
 sudo systemctl enable apache2
 ```
+![Screenshot from 2025-04-30 20-01-42](https://github.com/user-attachments/assets/6a742c71-511e-4649-9610-f754ec4da7e8)
 
-![image](https://github.com/user-attachments/assets/20e7231a-5941-4c77-9658-4826a1e79d96)
 
-### 6. Adding Virtual private gateway and attach it with this VPC:-
-![image](https://github.com/user-attachments/assets/a75f002d-60bc-47c9-a498-727d12de02fe)
 
---> edit routes in route tables of private subnet :-
-![image](https://github.com/user-attachments/assets/39f13e5b-0e86-4ff9-98ab-c584dee71df2)
+
 
 
 
