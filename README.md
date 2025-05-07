@@ -1,4 +1,4 @@
-### All the practical done in cloud computing 
+### All the practical of cloud computing 
 
 
 
